@@ -1532,77 +1532,7 @@ app.listen(3000);
 
 ---
 
-# 7. Practical Assignment Answers (Node.js)
-
-> [!NOTE]
-> ⚠️ In your assignment sheet **Question 2 and Question 4 are identical**. One answer is given for both. Confirm with your teacher.
-
-**Q1: Students folder with three records**
-```js
-const fs = require('fs');
-if (!fs.existsSync('Students')) fs.mkdirSync('Students');
-fs.writeFileSync('Students/student1.txt', 'Name: Asha, Roll: 101');
-fs.writeFileSync('Students/student2.txt', 'Name: Ravi, Roll: 102');
-fs.writeFileSync('Students/student3.txt', 'Name: Meera, Roll: 103');
-```
-
-**Q2 / Q4: Create `college.txt`**
-```js
-const fs = require('fs');
-fs.writeFile('college.txt',
-  'College: Fergusson College\nDepartment: Computer Science\nCourse: M.Sc. Computer Application', 
-  err => { if (err) throw err; console.log('Created'); });
-```
-
-**Q3: Read, append name, display**
-```js
-const fs = require('fs');
-fs.appendFile('college.txt', '\nName: Your Name', err => {
-  if (err) throw err;
-  fs.readFile('college.txt', 'utf8', (err, data) => console.log(data));
-});
-```
-
-**Q5: Calculator module**
-```js
-// calculator.js
-module.exports = {
-  add: (a, b) => a + b,
-  subtract: (a, b) => a - b,
-  multiply: (a, b) => a * b,
-  divide: (a, b) => b === 0 ? 'Cannot divide by zero' : a / b
-};
-// app.js
-const calc = require('./calculator');
-console.log(calc.add(10, 5), calc.divide(10, 2));
-```
-
-**Q6: `discount.js`**
-```js
-// discount.js
-exports.calculate = function (price, percent) {
-  const discount = price * percent / 100;
-  return { discount: discount, finalPrice: price - discount };
-};
-// app.js
-console.log(require('./discount').calculate(2000, 10));   // { discount: 200, finalPrice: 1800 }
-```
-
-**Q7: Two local modules + main program**
-```js
-// addition.js
-module.exports = (a, b) => a + b;
-// multiplication.js
-module.exports = (a, b) => a * b;
-// main.js
-const add = require('./addition');
-const mul = require('./multiplication');
-console.log('Sum =', add(4, 5), ' Product =', mul(4, 5));
-```
-
----
-
-# 8. Likely 60-Mark Question Bank
+# 7. Likely 60-Mark Question Bank
 
 | Marks | Question | Where |
 |---|---|---|
@@ -1627,7 +1557,7 @@ console.log('Sum =', add(4, 5), ' Product =', mul(4, 5));
 
 ---
 
-# 9. Short Notes (Quick Revision)
+# 8. Short Notes (Quick Revision)
 
 Each note is 3–5 lines. Write in this form for **short-note** questions.
 
